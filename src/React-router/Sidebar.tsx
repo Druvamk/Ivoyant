@@ -10,7 +10,6 @@ import { Menu, MenuProps, Switch, Tooltip } from "antd";
 import { useState } from "react";
 export default function Sidebar() {
   const [theme, setTheme] = useState<boolean>(false);
-  // Function to handle theme toggle
   const toggleTheme = (): void => {
     setTheme(!theme);
   };
