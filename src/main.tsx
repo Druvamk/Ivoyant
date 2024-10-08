@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
+import Validate from "./Form-validation/Validate";
 
 const rootElement = document.getElementById("root");
 
@@ -9,7 +9,7 @@ if (rootElement) {
 
   root.render(
     <React.StrictMode>
-      <App />
+      <Validate />
     </React.StrictMode>
   );
 }
