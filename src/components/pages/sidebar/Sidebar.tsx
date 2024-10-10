@@ -1,20 +1,28 @@
 import React, { useState } from "react";
 import {
   BarChartOutlined,
+  BellOutlined,
   CalendarOutlined,
   CommentOutlined,
   DashboardOutlined,
+  MailOutlined,
   MenuFoldOutlined,
   MenuUnfoldOutlined,
   PieChartOutlined,
   ProductOutlined,
   SearchOutlined,
+  SettingOutlined,
   TableOutlined,
+  TranslationOutlined,
   UserOutlined,
+  WindowsOutlined,
 } from "@ant-design/icons";
 import "./Sidebar.css";
-import { Button, Input, Layout, Menu, theme } from "antd";
+import { Avatar, Badge, Button, Input, Layout, Menu, theme } from "antd";
 import { Divider } from "rc-menu";
+import { Content } from "antd/es/layout/layout";
+import { Outlet } from "react-router";
+import { Link } from "react-router-dom";
 
 const { Header, Sider } = Layout;
 
@@ -34,9 +42,9 @@ const Sidebar: React.FC = () => {
           icon: <DashboardOutlined />,
           label: "Dashboard",
           children: [
-            { key: "g1", label: "Default" },
-            { key: "g2", label: "Analytics" },
-            { key: "g3", label: "Invoices" },
+            { key: "g1", label: <Link to="default">Default</Link> },
+            { key: "g2", label: <Link to="analytics">Analytics</Link> },
+            { key: "g3", label: <Link to="invoices">Invoices</Link> },
           ],
         },
         { key: "2", label: "Components", icon: <ProductOutlined /> },
@@ -344,49 +352,126 @@ const Sidebar: React.FC = () => {
     },
   ];
   return (
-    <Layout>
-      <Sider
-        trigger={null}
-        collapsible
-        collapsed={collapsed}
+    <>
+      <Layout
         style={{
-          height: "100vh",
-          overflowY: "auto",
-          overflowX: "hidden",
-          position: "relative",
+          minHeight: "100vh",
+          position: "sticky",
+          background: colorBgContainer,
         }}
-        className="sider-scrollbar active"
       >
-        <Header></Header>
-
-        <div className="demo-logo-vertical" />
-        <Menu
-          theme="light"
-          mode="inline"
-          defaultSelectedKeys={["1"]}
-          items={items}
-        />
-      </Sider>
-      <Layout>
-        <Header style={{ padding: 0, background: colorBgContainer }}>
-          <Button
-            type="text"
-            icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-            onClick={() => setCollapsed(!collapsed)}
+        <Sider
+          trigger={null}
+          collapsible
+          collapsed={collapsed}
+          style={{
+            height: "100vh",
+            overflowY: "auto",
+            overflowX: "hidden",
+          }}
+          className="sider-scrollbar active"
+        >
+          <Header
             style={{
-              fontSize: "16px",
-              width: 64,
-              height: 64,
+              background: colorBgContainer,
+              padding: 0,
             }}
+          >
+            <div>efvefrv</div>
+          </Header>
+
+          <div className="demo-logo-vertical" />
+          <Menu
+            theme="light"
+            mode="inline"
+            defaultSelectedKeys={["1"]}
+            items={items}
           />
-          <Input
-            placeholder="Basic usage"
-            style={{ width: 200 }}
-            onBeforeInput={<SearchOutlined />}
-          />
-        </Header>
+        </Sider>
+        <Layout style={{ padding: "0", position: "sticky" }}>
+          <Header
+            style={{
+              padding: 0,
+              background: "#fff",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            {/* Collapse Button */}
+            <Button
+              type="text"
+              icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+              onClick={() => setCollapsed(!collapsed)}
+              style={{ marginLeft: "16px" }}
+            />
+            <Input
+              placeholder="Ctrl + K"
+              prefix={<SearchOutlined />}
+              style={{
+                width: 200,
+                borderRadius: 4,
+                padding: "4px 8px",
+                fontSize: "14px",
+                marginLeft: "16px",
+              }}
+            />
+
+            {/* Navigation Menu */}
+            <Menu
+              theme="light"
+              mode="horizontal"
+              style={{ flex: 1, justifyContent: "flex-end" }}
+              items={[
+                {
+                  key: "1",
+                  label: <WindowsOutlined style={{ fontSize: "15px" }} />,
+                },
+                {
+                  key: "1",
+                  label: <TranslationOutlined style={{ fontSize: "15px" }} />,
+                },
+                {
+                  key: "1",
+                  label: (
+                    <Badge count={2} color="#1890ff">
+                      <BellOutlined style={{ fontSize: "15px" }} />
+                    </Badge>
+                  ),
+                },
+                {
+                  key: "1",
+                  label: <MailOutlined style={{ fontSize: "15px" }} />,
+                },
+                {
+                  key: "2",
+                  label: <SettingOutlined style={{ fontSize: "15px" }} />,
+                },
+                {
+                  key: "3",
+                  icon: <Avatar icon={<UserOutlined />} />,
+                  label: "JWT User",
+                },
+              ]}
+            />
+          </Header>
+
+          {/* Main Content */}
+          <Layout>
+            <Content
+              style={{
+                padding: 24,
+                margin: 0,
+                minHeight: 280,
+                background: colorBgContainer,
+              }}
+            >
+              <Outlet />
+            </Content>
+          </Layout>
+        </Layout>
       </Layout>
-    </Layout>
+    </>
   );
 };
 
