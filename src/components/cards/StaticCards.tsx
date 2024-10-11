@@ -7,6 +7,7 @@ import {
   FileOutlined,
 } from "@ant-design/icons";
 import { cardStyle } from "./Cards";
+import { Container } from "../../cardsStyledComponents/Container.styled";
 const { Text, Title } = Typography;
 
 const StaticCards: React.FC = () => (
@@ -28,13 +29,7 @@ const StaticCards: React.FC = () => (
     <Row gutter={20} style={{ marginTop: "16px" }}>
       <Col span={6}>
         <Card style={{ ...cardStyle, width: "300px", height: "100px" }}>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
+          <Container>
             <div>
               <Statistic
                 value="$30200"
@@ -43,18 +38,12 @@ const StaticCards: React.FC = () => (
               <Text type="secondary">All Earnings</Text>
             </div>
             <BarChartOutlined style={{ fontSize: "24px", color: "#758694 " }} />
-          </div>
+          </Container>
         </Card>
       </Col>
       <Col span={6}>
         <Card style={{ ...cardStyle, width: "300px", height: "100px" }}>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
+          <Container>
             <div>
               <Statistic
                 value="145"
@@ -63,18 +52,12 @@ const StaticCards: React.FC = () => (
               <Text type="secondary">Task</Text>
             </div>
             <CalendarOutlined style={{ fontSize: "24px" }} />
-          </div>
+          </Container>
         </Card>
       </Col>
       <Col span={6}>
         <Card style={{ ...cardStyle, width: "300px", height: "100px" }}>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
+          <Container>
             <div>
               <Statistic
                 value="290+"
@@ -83,18 +66,12 @@ const StaticCards: React.FC = () => (
               <Text type="secondary">Page Views</Text>
             </div>
             <FileOutlined style={{ fontSize: "24px", color: "#B43F3F " }} />
-          </div>
+          </Container>
         </Card>
       </Col>
       <Col span={6}>
         <Card style={{ ...cardStyle, width: "300px", height: "100px" }}>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
+          <Container>
             <div>
               <Statistic
                 value="500"
@@ -103,7 +80,7 @@ const StaticCards: React.FC = () => (
               <Text type="secondary">Downloads</Text>
             </div>
             <DownloadOutlined style={{ fontSize: "24px", color: "#009FBD " }} />
-          </div>
+          </Container>
         </Card>
       </Col>
     </Row>

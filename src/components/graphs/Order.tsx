@@ -3,7 +3,7 @@ import Chart from "react-apexcharts";
 export default function Order() {
   return (
     <Chart
-      type="line" // Change type to "line"
+      type="line" 
       width={300}
       height={130}
       series={[
@@ -13,11 +13,11 @@ export default function Order() {
             1800, 1500, 1800, 1700, 1400, 1200, 1000, 800, 600, 500, 600, 800,
             500, 700, 400, 600, 500, 600,
           ],
-          color: "#D91656", // This color will be applied to the line
+          color: "#D91656",
         },
       ]}
       options={{
-        chart: { id: "basic-line" }, // Updated the chart id to reflect the change
+        chart: { id: "basic-line" }, 
         xaxis: {
           categories: [
             "users",
@@ -37,15 +37,15 @@ export default function Order() {
             "users",
           ],
           labels: {
-            show: false, // Keep labels hidden if desired
+            show: false, 
           },
         },
         dataLabels: {
-          enabled: false, // Keep data labels disabled
+          enabled: false, 
         },
         stroke: {
-          curve: "smooth", // Makes the line smooth
-          width: 5, // Line thickness
+          curve: "smooth", 
+          width: 5, 
         },
       }}
     />

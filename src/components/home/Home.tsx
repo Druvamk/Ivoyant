@@ -9,7 +9,7 @@ import {
   Space,
   Typography,
 } from "antd";
-import "./Home.css";
+import "./Home.scss";
 import {
   FireOutlined,
   LockOutlined,
@@ -18,50 +18,35 @@ import {
 } from "@ant-design/icons";
 import SvgPhoto from "../SvgPhoto";
 import { Link } from "react-router-dom";
+import { LoginContainer } from "../../cardsStyledComponents/Container.styled";
 const { Title, Text, Link: AntdLink } = Typography;
 export default function Home() {
   return (
     <>
       <div className="home">
-        <div
-          style={{
-            textAlign: "left",
-            position: "absolute",
-            top: "20px",
-            left: "20px",
-          }}
-        >
+        <div className="logo">
           <SvgPhoto />
         </div>
         <div className="login-form">
-          <Form
-            layout="vertical"
-            style={{
-              width: "400px",
-              height: "500px",
-            }}
-          >
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <Form layout="vertical" className="form-login">
+            <LoginContainer>
               <div>
                 <Title level={2}>Login</Title>
               </div>
               <div>
                 <AntdLink href="/register">Don't have an account?</AntdLink>
               </div>
-            </div>
+            </LoginContainer>
             <div>
               <Form.Item label="Email" name="Email">
-                <Input
-                  placeholder="Username"
-                  style={{ width: "100%", height: "40px" }}
-                />
+                <Input placeholder="Username" className="login-input" />
               </Form.Item>
             </div>
             <div>
               <Form.Item label="Password" name="password">
                 <Input.Password
                   placeholder="Password"
-                  style={{ width: "100%", height: "40px" }}
+                  className="login-input"
                 />
               </Form.Item>
             </div>
@@ -102,21 +87,21 @@ export default function Home() {
             <Button
               icon={<FireOutlined style={{ color: "red" }} />}
               shape="default"
-              style={{ display: "flex", alignItems: "center" }}
+              className="btn-others"
             >
               Firebase
             </Button>
             <Button
               icon={<LockOutlined style={{ color: "green" }} />}
               shape="default"
-              style={{ display: "flex", alignItems: "center" }}
+              className="btn-others"
             >
               Auth0
             </Button>
             <Button
               icon={<CloudOutlined style={{ color: "blue" }} />}
               shape="default"
-              style={{ display: "flex", alignItems: "center" }}
+              className="btn-others"
             >
               AWS
             </Button>
@@ -130,30 +115,14 @@ export default function Home() {
           </Space>
         </div>
       </div>
-      <div
-        style={{
-          marginTop: "10px",
-          position: "absolute",
-          bottom: "20px",
-          left: "20px",
-        }}
-      >
+      <div className="footer-left">
         <div>
           <Text type="secondary">
             This site is protected by <AntdLink>Privacy Policys</AntdLink>
           </Text>
         </div>
       </div>
-      <div
-        style={{
-          marginTop: "10px",
-          position: "absolute",
-          bottom: "20px",
-          right: "20px",
-          display: "flex",
-          gap: "20px",
-        }}
-      >
+      <div className="footer-right">
         <div>
           <Text type="secondary">
             <AntdLink type="secondary">Terms and Conditions</AntdLink>

@@ -5,6 +5,10 @@ import {
 } from "@ant-design/icons";
 import { Card, Col, Row, Statistic, Typography } from "antd";
 import { cardStyle } from "./Cards";
+import {
+  Container,
+  ParaGraph,
+} from "../../cardsStyledComponents/Container.styled";
 const { Title } = Typography;
 export default function BigColorCards() {
   return (
@@ -19,13 +23,7 @@ export default function BigColorCards() {
               "linear-gradient(90deg, #0052D4 0%, #4364F7 50%, #6FB1FC 100%)",
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
+          <Container>
             <div>
               <DollarOutlined
                 style={{
@@ -48,11 +46,9 @@ export default function BigColorCards() {
                   fontSize: "34px",
                 }}
               />
-              <p style={{ letterSpacing: "0.5px", color: "#fff" }}>
-                $50,032 Last Month
-              </p>
+              <ParaGraph>$50,032 Last Month</ParaGraph>
             </div>
-          </div>
+          </Container>
         </Card>
       </Col>
       <Col span={8}>
@@ -65,13 +61,7 @@ export default function BigColorCards() {
               "linear-gradient(90deg, #d3a418 0%, #b89b29 50%, #cec435 100%)",
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
+          <Container>
             <div>
               <ScheduleOutlined
                 style={{
@@ -94,11 +84,9 @@ export default function BigColorCards() {
                   fontSize: "34px",
                 }}
               />
-              <p style={{ letterSpacing: "0.5px", color: "#fff" }}>
-                20% Increase
-              </p>
+              <ParaGraph>20% Increase</ParaGraph>
             </div>
-          </div>
+          </Container>
         </Card>
       </Col>
       <Col span={8}>
@@ -111,13 +99,7 @@ export default function BigColorCards() {
               "linear-gradient(90deg, #09810b 0%, #5ace85 50%, #72cb89 100%)",
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
+          <Container>
             <div>
               <MedicineBoxOutlined
                 style={{
@@ -141,11 +123,9 @@ export default function BigColorCards() {
                   color: "#fff",
                 }}
               />
-              <p style={{ letterSpacing: "2px", color: "#fff" }}>
-                $1,055 Revenue Generated
-              </p>
+              <ParaGraph>$1,055 Revenue Generated</ParaGraph>
             </div>
-          </div>
+          </Container>
         </Card>
       </Col>
     </Row>

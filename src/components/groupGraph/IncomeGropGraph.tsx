@@ -2,6 +2,7 @@ import React from "react";
 import { Typography, Button, Dropdown, Menu, Row, Col, List } from "antd";
 import { DownloadOutlined, CaretDownOutlined } from "@ant-design/icons";
 import { Line } from "@ant-design/charts";
+import { IncomeContainer } from "../../cardsStyledComponents/Container.styled";
 
 const { Text, Title } = Typography;
 
@@ -68,13 +69,7 @@ const IncomeGropGraph: React.FC = () => {
   return (
     <Row gutter={[16, 16]}>
       <Col span={16}>
-        <div
-          style={{
-            border: "1px solid #e0e0e0",
-            borderRadius: "8px",
-            padding: "16px",
-          }}
-        >
+        <IncomeContainer>
           <Title level={4}>Income Overview</Title>
           <Row gutter={[16, 16]} align="middle" justify="space-between">
             <Col>
@@ -103,18 +98,12 @@ const IncomeGropGraph: React.FC = () => {
           </Row>
 
           <Line {...lineConfig} />
-        </div>
+        </IncomeContainer>
       </Col>
 
       {/* Right Side: Page Views */}
       <Col span={8}>
-        <div
-          style={{
-            border: "1px solid #e0e0e0",
-            borderRadius: "8px",
-            padding: "16px",
-          }}
-        >
+        <IncomeContainer>
           <Title level={4}>Page Views by Page Title</Title>
           <List
             dataSource={pageViewsData}
@@ -137,7 +126,7 @@ const IncomeGropGraph: React.FC = () => {
               </List.Item>
             )}
           />
-        </div>
+        </IncomeContainer>
       </Col>
     </Row>
   );

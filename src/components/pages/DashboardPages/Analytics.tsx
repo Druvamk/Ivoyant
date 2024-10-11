@@ -1,4 +1,4 @@
-import Footer from "../../Footer/Footer";
+import FooterCards from "../../cards/FooterCards";
 import RecentGraphs from "../../graphs/RecentGraphs";
 import SalesReport from "../../graphs/SalesGroup";
 import GroupGraph from "../../groupGraph/GroupGraph";
@@ -12,7 +12,7 @@ export default function Analytics() {
         <IncomeGropGraph />
         <RecentGraphs />
         <SalesReport />
-        <Footer />
+        <FooterCards />
       </div>
     </>
   );

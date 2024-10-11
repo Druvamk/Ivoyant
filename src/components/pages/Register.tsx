@@ -3,6 +3,7 @@ import "./Register.css";
 import { Link } from "react-router-dom";
 import SvgPhoto from "../SvgPhoto";
 import { ChangeEvent, useState } from "react";
+import { Container } from "../../cardsStyledComponents/Container.styled";
 const { Title, Text, Link: AntdLink } = Typography;
 
 export default function Register() {
@@ -63,20 +64,14 @@ export default function Register() {
             }}
             onFinish={onFinish}
           >
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-              }}
-            >
+            <Container>
               <div>
                 <Title level={4}>Registeration Form</Title>
               </div>
               <div>
                 <Link to="/">Already have an account?</Link>
               </div>
-            </div>
+            </Container>
             <div style={{ display: "flex", justifyContent: "space-between" }}>
               <Form.Item label="First Name" name="FirstName">
                 <Input

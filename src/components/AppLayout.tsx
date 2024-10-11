@@ -4,7 +4,8 @@ import Sidebar from "./pages/sidebar/Sidebar";
 import Home from "./home/Home";
 import Default from "./pages/DashboardPages/Default";
 import Analytics from "./pages/DashboardPages/Analytics";
-import Invoices from "./pages/DashboardPages/Invoices";
+import Statistics from "./pages/Widges/Statistics";
+import Data from "./pages/Widges/Data";
 
 export default function AppLayout() {
   return (
@@ -15,7 +16,8 @@ export default function AppLayout() {
         <Route path="/dashboard" element={<Sidebar />}>
           <Route path="default" element={<Default />} />
           <Route path="analytics" element={<Analytics />} />
-          <Route path="invoices" element={<Invoices />} />
+          <Route path="statistics" element={<Statistics />} />
+          <Route path="data" element={<Data />} />
         </Route>
       </Routes>
     </BrowserRouter>

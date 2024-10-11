@@ -1,3 +1,5 @@
+import { ReactComponentElement } from "react";
+
 export interface DataPointProps {
   month: string;
   value: number;
@@ -56,3 +58,34 @@ export type incomeconfigProps = {
     };
   };
 };
+export type checkBoxdataProps = {
+  title: string;
+  completed: boolean;
+};
+export type datacardRow1Props = {
+  title: string;
+  percentage: number;
+  color: string;
+};
+export type teamProps = {
+  rol: string;
+  time: string;
+  src: string;
+};
+export type teamMemberDataProps = {
+  time: string;
+  src: string;
+  follwers: string;
+  desc: string;
+};
+export type userActivityDataProps = {
+  time: string;
+  src: string;
+};
+export interface DataType {
+  key: React.Key;
+  // assigned: React.ComponentType;
+  name: string;
+  dueDate: string;
+  priority: string;
+}

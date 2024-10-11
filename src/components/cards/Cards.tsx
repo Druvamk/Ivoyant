@@ -5,7 +5,7 @@ export const cardStyle = { height: "140px", width: "300px" };
 
 export default function Cards() {
   return (
-    <Row gutter={16}>
+    <Row gutter={16} style={{ marginTop: "16px" }}>
       <Col span={6}>
         <Card style={cardStyle}>
           <Statistic

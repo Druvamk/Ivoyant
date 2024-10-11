@@ -1,10 +1,11 @@
-import { Button, Card, Col, Layout, Row, Statistic } from "antd";
+import { Button, Card, Col, Image, Layout, Row, Statistic } from "antd";
 import welcomebanner from "../../assests/welcome-banner-D4VmDBhG.png";
 import { ArrowUpOutlined } from "@ant-design/icons";
 import Users from "../graphs/Users";
 import Order from "../graphs/Order";
 import Sales from "../graphs/Sales";
 import MarketOverview from "../graphs/MarketOverview";
+import { GroupGraphContainer } from "../../cardsStyledComponents/Container.styled";
 
 function GroupGraph() {
   return (
@@ -36,7 +37,7 @@ function GroupGraph() {
                 </Button>
               </Col>
               <Col span={8} style={{ textAlign: "right" }}>
-                <img
+                <Image
                   src={welcomebanner}
                   alt="banner illustration"
                   style={{ width: "250px", height: "auto" }}
@@ -56,13 +57,7 @@ function GroupGraph() {
                 paddingRight: "10px",
               }}
             >
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  flexDirection: "column",
-                }}
-              >
+              <GroupGraphContainer>
                 <Statistic
                   style={{ marginLeft: "40px" }}
                   title="Total Users"
@@ -83,7 +78,7 @@ function GroupGraph() {
                   }
                 />
                 <Users />
-              </div>
+              </GroupGraphContainer>
             </Card>
           </Col>
           <Col span={6}>
@@ -94,13 +89,7 @@ function GroupGraph() {
                 paddingRight: "10px",
               }}
             >
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  flexDirection: "column",
-                }}
-              >
+              <GroupGraphContainer>
                 <Statistic
                   style={{ marginLeft: "40px" }}
                   title="Total Order"
@@ -121,7 +110,7 @@ function GroupGraph() {
                   }
                 />
                 <Order />
-              </div>
+              </GroupGraphContainer>
             </Card>
           </Col>
           <Col span={6}>
@@ -132,13 +121,7 @@ function GroupGraph() {
                 paddingRight: "10px",
               }}
             >
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  flexDirection: "column",
-                }}
-              >
+              <GroupGraphContainer>
                 <Statistic
                   style={{ marginLeft: "40px" }}
                   title="Total Sales"
@@ -159,7 +142,7 @@ function GroupGraph() {
                   }
                 />
                 <Sales />
-              </div>
+              </GroupGraphContainer>
             </Card>
           </Col>
           <Col span={6}>
@@ -170,13 +153,7 @@ function GroupGraph() {
                 paddingRight: "10px",
               }}
             >
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  flexDirection: "column",
-                }}
-              >
+              <GroupGraphContainer>
                 <Statistic
                   style={{ marginLeft: "40px" }}
                   title="Total Marketing"
@@ -199,7 +176,7 @@ function GroupGraph() {
                 <div style={{ height: "130px" }}>
                   <MarketOverview />
                 </div>
-              </div>
+              </GroupGraphContainer>
             </Card>
           </Col>
         </Row>

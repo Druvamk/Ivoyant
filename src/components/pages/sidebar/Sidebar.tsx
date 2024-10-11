@@ -45,7 +45,7 @@ const Sidebar: React.FC = () => {
           children: [
             { key: "g1-1", label: <Link to="default">Default</Link> },
             { key: "g1-2", label: <Link to="analytics">Analytics</Link> },
-            { key: "g1-3", label: <Link to="invoices">Invoices</Link> },
+            { key: "g1-3", label: "Invoices" },
           ],
         },
         { key: "2", label: "Components", icon: <ProductOutlined /> },
@@ -56,8 +56,16 @@ const Sidebar: React.FC = () => {
       label: collapsed ? "" : "Widgets",
       type: "group",
       children: [
-        { key: "g2-1", label: "Statistics", icon: <PieChartOutlined /> },
-        { key: "g2-2", label: "Data", icon: <TableOutlined /> },
+        {
+          key: "g2-1",
+          label: <Link to="statistics">Statistics</Link>,
+          icon: <PieChartOutlined />,
+        },
+        {
+          key: "g2-2",
+          label: <Link to="data">Data</Link>,
+          icon: <TableOutlined />,
+        },
         { key: "g2-3", label: "Charts", icon: <BarChartOutlined /> },
       ],
     },

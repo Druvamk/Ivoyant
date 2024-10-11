@@ -1,17 +1,14 @@
 import React from "react";
 import { Card, Col, Row, Statistic, Typography } from "antd";
 import {
-  BarChartOutlined,
-  CalendarOutlined,
-  DownloadOutlined,
   FacebookOutlined,
-  FileOutlined,
   LinkedinOutlined,
   TwitterOutlined,
   YoutubeOutlined,
 } from "@ant-design/icons";
 import { cardStyle } from "./Cards";
-const { Text, Title } = Typography;
+import { Container } from "../../cardsStyledComponents/Container.styled";
+const { Text } = Typography;
 
 const SocialCards: React.FC = () => (
   <>
@@ -26,13 +23,7 @@ const SocialCards: React.FC = () => (
               "linear-gradient(90deg, #0052D4 0%, #4364F7 50%, #6FB1FC 100%)",
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
+          <Container>
             <div>
               <Statistic
                 value="1165 +"
@@ -43,7 +34,7 @@ const SocialCards: React.FC = () => (
               </Text>
             </div>
             <FacebookOutlined style={{ fontSize: "34px", color: "#758694 " }} />
-          </div>
+          </Container>
         </Card>
       </Col>
       <Col span={6}>
@@ -56,13 +47,7 @@ const SocialCards: React.FC = () => (
               "linear-gradient(90deg, #69bfb8 0%, #6ac4b8 50%, #51b6b3 100%)",
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
+          <Container>
             <div>
               <Statistic
                 value="780 +"
@@ -71,7 +56,7 @@ const SocialCards: React.FC = () => (
               <Text type="secondary">Twitter Users</Text>
             </div>
             <TwitterOutlined style={{ fontSize: "34px" }} />
-          </div>
+          </Container>
         </Card>
       </Col>
       <Col span={6}>
@@ -83,13 +68,7 @@ const SocialCards: React.FC = () => (
             background: "#000",
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
+          <Container>
             <div>
               <Statistic
                 value="998 +"
@@ -100,7 +79,7 @@ const SocialCards: React.FC = () => (
               </Text>
             </div>
             <LinkedinOutlined style={{ fontSize: "34px", color: "gray" }} />
-          </div>
+          </Container>
         </Card>
       </Col>
       <Col span={6}>
@@ -113,13 +92,7 @@ const SocialCards: React.FC = () => (
               "linear-gradient(90deg, #e23d38 0%, #e66938 50%, #e8332d 100%)",
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
+          <Container>
             <div>
               <Statistic
                 value="650 +"
@@ -130,7 +103,7 @@ const SocialCards: React.FC = () => (
               </Text>
             </div>
             <YoutubeOutlined style={{ fontSize: "34px", color: "#009FBD " }} />
-          </div>
+          </Container>
         </Card>
       </Col>
     </Row>
