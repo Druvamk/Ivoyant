@@ -6,7 +6,7 @@ export default function Sales() {
       <Chart
         type="bar"
         width={300}
-        height={200}
+        height={150}
         series={[
           {
             name: "Sales",
@@ -14,6 +14,7 @@ export default function Sales() {
               100, 90, 80, 90, 80, 80, 90, 100, 80, 70, 80, 70, 80, 90, 70, 90,
               80, 90,
             ],
+            color: "#F3C623",
           },
         ]}
         options={{

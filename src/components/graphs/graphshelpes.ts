@@ -1,5 +1,7 @@
 import {
   DataPointProps,
+  incomeconfigProps,
+  incomeProps,
   marketconfigProps,
   marketDataProps,
   VerticalconfigProps,
@@ -55,6 +57,26 @@ export const marketconfig: marketconfigProps = {
   color: "#3B9CFF",
   meta: {
     month: { alias: "Month" },
+    value: { alias: "Value" },
+  },
+};
+export const incomedata: incomeProps[] = [
+  { week: "Mon", value: 100 },
+  { week: "Tue", value: 20 },
+  { week: "Wed", value: 60 },
+  { week: "Thu", value: 20 },
+  { week: "Fri", value: 20 },
+  { week: "Sat", value: 80 },
+  { week: "Sun", value: 20 },
+];
+export const incomedataconfig: incomeconfigProps = {
+  data: incomedata,
+  xField: "week",
+  yField: "value",
+  smooth: false,
+  color: "#3B9CFF",
+  meta: {
+    week: { alias: "week" },
     value: { alias: "Value" },
   },
 };

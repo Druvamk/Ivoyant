@@ -5,7 +5,7 @@ export default function Order() {
     <Chart
       type="line" // Change type to "line"
       width={300}
-      height={200}
+      height={130}
       series={[
         {
           name: "Sales",

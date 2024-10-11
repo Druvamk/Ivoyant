@@ -1,5 +1,13 @@
-import React from "react";
+import BigColorCards from "../../cards/BigColorCards";
+import SocialCards from "../../cards/SocialCards";
+import StaticCards from "../../cards/StaticCards";
 
 export default function Invoices() {
-  return <div></div>;
+  return (
+    <div>
+      <StaticCards />
+      <BigColorCards />
+      <SocialCards />
+    </div>
+  );
 }

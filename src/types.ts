@@ -6,6 +6,10 @@ export interface marketDataProps {
   market: string;
   value: number;
 }
+export type incomeProps = {
+  week: string;
+  value: number;
+};
 export type VerticalconfigProps = {
   data: DataPointProps[];
   xField: string;
@@ -29,6 +33,22 @@ export type marketconfigProps = {
   color: string;
   meta: {
     month: {
+      alias: string;
+    };
+    value: {
+      alias: string;
+    };
+  };
+};
+
+export type incomeconfigProps = {
+  data: incomeProps[];
+  xField: string;
+  yField: string;
+  smooth: boolean;
+  color: string;
+  meta: {
+    week: {
       alias: string;
     };
     value: {
