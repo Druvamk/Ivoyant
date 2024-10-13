@@ -4,14 +4,31 @@ import {
   RedditOutlined,
 } from "@ant-design/icons";
 import { Card, Col, Row, Typography } from "antd";
-import { marginTop } from "../../data";
 const { Title, Text } = Typography;
 export default function BigColorCards() {
   return (
-    <Row gutter={20} style={marginTop}>
+    <Row gutter={20} style={{ marginTop: "16px" }}>
       <Col span={8}>
-        <Card className="bg-[#40e150] rounded-[8px] h-[120px] flex justify-center items-center relative">
-          <CalendarOutlined className="text-[100px] text-[rgba(255,255,255,0.3)] absolute left-[10px] bottom-[10px]" />
+        <Card
+          style={{
+            backgroundColor: "#90ee90",
+            borderRadius: "8px",
+            textAlign: "center",
+            padding: "20px",
+            position: "relative",
+            height: "150px",
+          }}
+          bodyStyle={{ padding: "20px" }}
+        >
+          <CalendarOutlined
+            style={{
+              fontSize: "100px",
+              color: "rgba(255, 255, 255, 0.3)",
+              position: "absolute",
+              left: "10px",
+              bottom: "10px",
+            }}
+          />
 
           <Title level={2} style={{ color: "#fff", marginBottom: "8px" }}>
             1,658
@@ -20,25 +37,64 @@ export default function BigColorCards() {
         </Card>
       </Col>
       <Col span={8}>
-        <Card className="bg-[#1890ff] rounded-[8px] h-[120px] flex justify-center items-center relative">
-          <FileOutlined className="text-[100px] text-[rgba(255,255,255,0.3)] absolute left-[10px] bottom-[10px]" />
+        <Card
+          style={{
+            backgroundColor: "#1890ff", // blue background
+            borderRadius: "8px",
+            height: "150px", // set height to ensure vertical alignment
+            display: "flex", // use flexbox
+            justifyContent: "center", // center horizontally
+            alignItems: "center", // center vertically
+            position: "relative",
+          }}
+          bodyStyle={{ padding: "0" }} // no padding needed
+        >
+          <FileOutlined
+            style={{
+              fontSize: "100px",
+              color: "rgba(255, 255, 255, 0.3)",
+              position: "absolute",
+              left: "10px",
+              bottom: "10px",
+            }}
+          />
 
           <div style={{ textAlign: "center" }}>
             <Title level={2} style={{ color: "#fff", marginBottom: "8px" }}>
               1K
             </Title>
-            <Text style={{ color: "#fff", marginBottom: "8px" }}>
+            <Text style={{ color: "#fff", fontWeight: "500" }}>
               Daily page view
             </Text>
           </div>
         </Card>
       </Col>
       <Col span={8}>
-        <Card className="bg-[#815a11] rounded-[8px] h-[120px] flex justify-center items-center relative">
-          <RedditOutlined className="text-[100px] text-[rgba(255,255,255,0.3)] absolute left-[10px] bottom-[10px]" />
+        <Card
+          style={{
+            backgroundColor: "#a47a07",
+            borderRadius: "8px",
+            textAlign: "center",
+            padding: "20px",
+            position: "relative",
+            height: "150px",
+          }}
+          bodyStyle={{ padding: "20px" }}
+        >
+          <RedditOutlined
+            style={{
+              fontSize: "100px",
+              color: "rgba(255, 255, 255, 0.3)",
+              position: "absolute",
+              left: "10px",
+              bottom: "10px",
+            }}
+          />
 
-          <Title style={{ color: "#fff", marginBottom: "8px" }}>5,678</Title>
-          <Text className="text-white">Last month visitor</Text>
+          <Title level={2} style={{ color: "#fff", marginBottom: "8px" }}>
+            5,678
+          </Title>
+          <Text style={{ color: "#fff" }}>Last month visitor</Text>
         </Card>
       </Col>
     </Row>
