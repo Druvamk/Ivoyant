@@ -95,3 +95,10 @@ export interface DataType2 {
   productname: string;
   price: string;
 }
+export type combineCardsProps = {
+  fontSize: string;
+  color: string;
+  position: string;
+  left: string;
+  bottom: string;
+};

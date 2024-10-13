@@ -78,7 +78,7 @@ const SocialCards: React.FC = () => (
                 Linked In Users
               </Text>
             </div>
-            <LinkedinOutlined style={{ fontSize: "34px", color: "gray" }} />
+            <LinkedinOutlined className="text-[34px] text-gray-500" />
           </Container>
         </Card>
       </Col>
@@ -102,7 +102,7 @@ const SocialCards: React.FC = () => (
                 Youtube Videos
               </Text>
             </div>
-            <YoutubeOutlined style={{ fontSize: "34px", color: "#009FBD " }} />
+            <YoutubeOutlined className="text-[34px] text-[#009FBD]" />
           </Container>
         </Card>
       </Col>

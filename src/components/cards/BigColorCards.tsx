@@ -25,12 +25,7 @@ export default function BigColorCards() {
         >
           <Container>
             <div>
-              <DollarOutlined
-                style={{
-                  fontSize: "44px",
-                  marginBottom: "70px",
-                }}
-              />
+              <DollarOutlined className="text-[44px] mb-[70px]" />
             </div>
             <div>
               <Statistic
@@ -63,12 +58,7 @@ export default function BigColorCards() {
         >
           <Container>
             <div>
-              <ScheduleOutlined
-                style={{
-                  fontSize: "44px",
-                  marginBottom: "70px",
-                }}
-              />
+              <ScheduleOutlined className="text-[44px] mb-[70px]" />
             </div>
             <div>
               <Statistic
@@ -101,13 +91,7 @@ export default function BigColorCards() {
         >
           <Container>
             <div>
-              <MedicineBoxOutlined
-                style={{
-                  fontSize: "44px",
-                  marginBottom: "70px",
-                  color: "#DBD3D3",
-                }}
-              />
+              <MedicineBoxOutlined className="text-[44px] mb-[70px]" />
             </div>
             <div>
               <Statistic

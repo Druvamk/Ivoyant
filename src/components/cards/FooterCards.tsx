@@ -1,9 +1,11 @@
 import { FileOutlined, PlusOutlined } from "@ant-design/icons";
 import { Avatar, Button, Card, Col, Progress, Row, Typography } from "antd";
+import { marginTop } from "../../data";
+import { ParaGraph1 } from "../../cardsStyledComponents/Container.styled";
 const { Title, Text } = Typography;
 export default function FooterCards() {
   return (
-    <Row gutter={30} style={{ marginTop: "16px" }}>
+    <Row gutter={30} style={marginTop}>
       <Col span={14}>
         <div style={{ padding: "20px" }}>
           <Card bordered={false}>
@@ -19,7 +21,9 @@ export default function FooterCards() {
                   }}
                 >
                   <h2>What would you want to learn today</h2>
-                  <p>Your learning capacity is 80% as daily analytics</p>
+                  <ParaGraph1>
+                    Your learning capacity is 80% as daily analytics
+                  </ParaGraph1>
                   <div style={{ marginTop: "20px" }}>
                     <div>
                       <p>35% Completed</p>
@@ -64,10 +68,10 @@ export default function FooterCards() {
                       type="primary"
                       shape="circle"
                       icon={<PlusOutlined />}
-                      style={{ marginLeft: "10px" }}
+                      style={marginTop}
                     />
                   </div>
-                  <p style={{ marginTop: "10px" }}>
+                  <p style={marginTop}>
                     Chrome fixed the bug several versions ago, thus rendering
                     this...
                   </p>
@@ -78,28 +82,10 @@ export default function FooterCards() {
         </div>
       </Col>
       <Col span={10}>
-        <Card
-          style={{
-            backgroundColor: "#1890ff",
-            borderRadius: "8px",
-            height: "150px",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            position: "relative",
-          }}
-        >
-          <FileOutlined
-            style={{
-              fontSize: "100px",
-              color: "rgba(255, 255, 255, 0.3)",
-              position: "absolute",
-              left: "10px",
-              bottom: "10px",
-            }}
-          />
+        <Card className="bg-[#1890ff] rounded-[10px] h-[150px] flex justify-center items-center relative">
+          <FileOutlined className="text-[100px] text-[rgba(255,255,255,0.3)] absolute left-[10px] bottom-[10px]" />
 
-          <div style={{ textAlign: "center" }}>
+          <div className="text-center">
             <Title level={2} style={{ color: "#fff", marginBottom: "8px" }}>
               1K
             </Title>

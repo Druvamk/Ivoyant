@@ -30,3 +30,12 @@ export const FooterContainer = styled.div`
   align-items: center;
   gap: 20px;
 `;
+export const ParaGraph1 = styled.p`
+  margin-top: 10px;
+`;
+export const ParaGraphImpressions = styled.p`
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000;
+`;

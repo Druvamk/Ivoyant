@@ -8,6 +8,7 @@ import {
 } from "@ant-design/icons";
 import { cardStyle } from "./Cards";
 import { Container } from "../../cardsStyledComponents/Container.styled";
+import { marginTop } from "../../data";
 const { Text, Title } = Typography;
 
 const StaticCards: React.FC = () => (
@@ -26,7 +27,7 @@ const StaticCards: React.FC = () => (
       style={{ fontSize: "18px" }}
     />
     <Title level={2}>Statistics</Title>
-    <Row gutter={20} style={{ marginTop: "16px" }}>
+    <Row gutter={20} style={marginTop}>
       <Col span={6}>
         <Card style={{ ...cardStyle, width: "300px", height: "100px" }}>
           <Container>
@@ -65,7 +66,7 @@ const StaticCards: React.FC = () => (
               />
               <Text type="secondary">Page Views</Text>
             </div>
-            <FileOutlined style={{ fontSize: "24px", color: "#B43F3F " }} />
+            <FileOutlined className="text-[24px] text-[#B43F3F]" />
           </Container>
         </Card>
       </Col>
@@ -79,7 +80,7 @@ const StaticCards: React.FC = () => (
               />
               <Text type="secondary">Downloads</Text>
             </div>
-            <DownloadOutlined style={{ fontSize: "24px", color: "#009FBD " }} />
+            <DownloadOutlined className="text-[24px] text-[#009FBD]" />
           </Container>
         </Card>
       </Col>

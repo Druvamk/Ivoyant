@@ -16,7 +16,7 @@ import {
   CloudOutlined,
   ThunderboltOutlined,
 } from "@ant-design/icons";
-import SvgPhoto from "../SvgPhoto";
+import SvgPhoto from "../../SvgPhoto";
 import { Link } from "react-router-dom";
 import { LoginContainer } from "../../cardsStyledComponents/Container.styled";
 const { Title, Text, Link: AntdLink } = Typography;
@@ -68,7 +68,7 @@ export default function Home() {
                   <Button
                     type="primary"
                     htmlType="submit"
-                    style={{ width: "100%", height: "40px" }}
+                    className="w-full h-10"
                   >
                     Login
                   </Button>
@@ -85,28 +85,28 @@ export default function Home() {
         <div>
           <Space size="middle">
             <Button
-              icon={<FireOutlined style={{ color: "red" }} />}
+              icon={<FireOutlined className="text-red-700" />}
               shape="default"
               className="btn-others"
             >
               Firebase
             </Button>
             <Button
-              icon={<LockOutlined style={{ color: "green" }} />}
+              icon={<LockOutlined className="text-green-800" />}
               shape="default"
               className="btn-others"
             >
               Auth0
             </Button>
             <Button
-              icon={<CloudOutlined style={{ color: "blue" }} />}
+              icon={<CloudOutlined className="text-blue-400" />}
               shape="default"
               className="btn-others"
             >
               AWS
             </Button>
             <Button
-              icon={<ThunderboltOutlined style={{ color: "purple" }} />}
+              icon={<ThunderboltOutlined className="text-purple-900" />}
               shape="default"
               style={{ display: "flex", alignItems: "center" }}
             >

@@ -6,7 +6,10 @@ import {
   EyeOutlined,
 } from "@ant-design/icons";
 import { cardStyle } from "./Cards";
-import { Container } from "../../cardsStyledComponents/Container.styled";
+import {
+  Container,
+  ParaGraphImpressions,
+} from "../../cardsStyledComponents/Container.styled";
 const { Text } = Typography;
 
 const Impressions: React.FC = () => (
@@ -65,17 +68,7 @@ const Impressions: React.FC = () => (
           <Container>
             <div>
               <Statistic
-                title={
-                  <p
-                    style={{
-                      fontWeight: "bolder",
-                      fontSize: "15px",
-                      color: "#000",
-                    }}
-                  >
-                    Goal
-                  </p>
-                }
+                title={<ParaGraphImpressions>Goal</ParaGraphImpressions>}
                 value="30,564"
                 valueStyle={{ color: "#000", fontWeight: "500" }}
               />
@@ -101,17 +94,7 @@ const Impressions: React.FC = () => (
           <Container>
             <div>
               <Statistic
-                title={
-                  <p
-                    style={{
-                      fontWeight: "bolder",
-                      fontSize: "15px",
-                      color: "#000",
-                    }}
-                  >
-                    Impact
-                  </p>
-                }
+                title={<ParaGraphImpressions>Impact</ParaGraphImpressions>}
                 value="42.6%"
                 valueStyle={{ color: "#000", fontWeight: "500" }}
               />
