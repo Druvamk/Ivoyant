@@ -1,5 +1,5 @@
 import {
-  DataType,
+  DataType2,
   datacardRow1Props,
   teamMemberDataProps,
   teamProps,
@@ -9,8 +9,6 @@ import avatar1 from "../src/assests/avatar.png";
 import avatar2 from "../src/assests/avatar2.png";
 import avatar3 from "../src/assests/avatar3.png";
 import avatar4 from "../src/assests/avatar4.png";
-import Helpers from "./components/helpers/helpers";
-import { Tag } from "antd";
 import { TableColumnsType } from "antd";
 export const a1 = avatar1;
 export const a2 = avatar2;
@@ -104,54 +102,93 @@ export const userActivityData: userActivityDataProps[] = [
     time: "3 week ago",
   },
 ];
-export const columns: TableColumnsType<DataType> = [
+// export const columns: TableColumnsType<DataType>["Columns"] = [
+//   {
+//     title: "Assigned",
+//     dataIndex: "assigned",
+//   },
+//   {
+//     title: "Name",
+//     dataIndex: "name",
+//   },
+//   {
+//     title: "Due Date",
+//     dataIndex: "dueDate",
+//   },
+//   {
+//     title: "Priority",
+//     dataIndex: "priority",
+//     render: (priority: string) => {
+//       let color = "default";
+//       if (priority === "High") color = "red";
+//       else if (priority === "Medium") color = "orange";
+//       else if (priority === "Low") color = "blue";
+//       return <Tag color={color}>{priority}</Tag>;
+//     },
+//   },
+// ];
+export const columns2: TableColumnsType<DataType2> = [
   {
-    title: "Assigned",
-    dataIndex: "assigned",
+    title: "Last Sales",
+    dataIndex: "lastsales",
   },
   {
-    title: "Name",
-    dataIndex: "name",
+    title: "Product Name",
+    dataIndex: "productname",
   },
   {
-    title: "Due Date",
-    dataIndex: "dueDate",
-  },
-  {
-    title: "Priority",
-    dataIndex: "priority",
+    title: "Price",
+    dataIndex: "price",
   },
 ];
 
-export const data: DataType[] = [
+export const data1: DataType2[] = [
   {
     key: "1",
-    name: "Materially",
-    dueDate: "Jun, 26",
-    priority: "",
+    lastsales: "2136",
+    productname: "Head Phone",
+    price: "$ 926.23",
   },
   {
     key: "2",
-    name: "Mashable",
-    dueDate: "March, 31",
-    priority: "New York No. 1 Lake Park",
+    lastsales: "2546",
+    productname: "Iphone V",
+    price: "$ 485.85",
   },
   {
     key: "3",
-    name: "Flatable",
-    dueDate: "	Aug, 02",
-    priority: "New York No. 1 Lake Park",
+    lastsales: "2681",
+    productname: "Jacket",
+    price: "$ 786.4",
   },
   {
     key: "4",
-    name: "Guruable",
-    dueDate: "Sep, 22",
-    priority: "New York No. 1 Lake Park",
+    lastsales: "2136",
+    productname: "Head Phone",
+    price: "$ 926.23",
   },
   {
     key: "5",
-    name: "Berry",
-    dueDate: "Sep, 22",
-    priority: "New York No. 1 Lake Park",
+    lastsales: "2756",
+    productname: "Sofa",
+    price: "$ 563.45",
+  },
+  {
+    key: "6",
+    lastsales: "3652",
+    productname: "Iphone X",
+    price: "$ 563.45",
+  },
+  {
+    key: "7",
+    lastsales: "2756",
+    productname: "Sofa",
+    price: "$ 754.45",
+  },
+  {
+    key: "8",
+    lastsales: "7456",
+    productname: "Jacket",
+    price: "$ 743.23",
   },
 ];

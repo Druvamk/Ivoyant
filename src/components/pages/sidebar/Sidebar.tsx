@@ -17,7 +17,7 @@ import {
   UserOutlined,
   WindowsOutlined,
 } from "@ant-design/icons";
-import "./Sidebar.css";
+import "./Sidebar.scss";
 import { Avatar, Badge, Button, Input, Layout, Menu, theme } from "antd";
 import { Content } from "antd/es/layout/layout";
 import { Outlet } from "react-router";
@@ -66,7 +66,11 @@ const Sidebar: React.FC = () => {
           label: <Link to="data">Data</Link>,
           icon: <TableOutlined />,
         },
-        { key: "g2-3", label: "Charts", icon: <BarChartOutlined /> },
+        {
+          key: "g2-3",
+          label: <Link to="charts">Charts</Link>,
+          icon: <BarChartOutlined />,
+        },
       ],
     },
     {
@@ -252,14 +256,7 @@ const Sidebar: React.FC = () => {
           trigger={null}
           collapsible
           collapsed={collapsed}
-          style={{
-            height: "100vh",
-            position: "sticky",
-            top: 0,
-            overflowY: "auto",
-            overflowX: "hidden",
-          }}
-          className="sider-scrollbar active"
+          className="sider-scrollbar active sidebar"
         >
           <Header
             style={{
@@ -324,11 +321,11 @@ const Sidebar: React.FC = () => {
                   label: <WindowsOutlined style={{ fontSize: "15px" }} />,
                 },
                 {
-                  key: "1",
+                  key: "2",
                   label: <TranslationOutlined style={{ fontSize: "15px" }} />,
                 },
                 {
-                  key: "1",
+                  key: "3",
                   label: (
                     <Badge count={2} color="#1890ff">
                       <BellOutlined style={{ fontSize: "15px" }} />
@@ -336,15 +333,15 @@ const Sidebar: React.FC = () => {
                   ),
                 },
                 {
-                  key: "1",
+                  key: "4",
                   label: <MailOutlined style={{ fontSize: "15px" }} />,
                 },
                 {
-                  key: "2",
+                  key: "5",
                   label: <SettingOutlined style={{ fontSize: "15px" }} />,
                 },
                 {
-                  key: "3",
+                  key: "6",
                   icon: <Avatar icon={<UserOutlined />} />,
                   label: "JWT User",
                 },

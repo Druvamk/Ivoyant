@@ -6,6 +6,7 @@ import Default from "./pages/DashboardPages/Default";
 import Analytics from "./pages/DashboardPages/Analytics";
 import Statistics from "./pages/Widges/Statistics";
 import Data from "./pages/Widges/Data";
+import Charts from "./pages/Widges/charts/Charts";
 
 export default function AppLayout() {
   return (
@@ -17,6 +18,7 @@ export default function AppLayout() {
           <Route path="default" element={<Default />} />
           <Route path="analytics" element={<Analytics />} />
           <Route path="statistics" element={<Statistics />} />
+          <Route path="charts" element={<Charts />} />
           <Route path="data" element={<Data />} />
         </Route>
       </Routes>

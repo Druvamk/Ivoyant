@@ -1,7 +1,7 @@
-import { Avatar, Card, Col, Row, Space, Table, Typography } from "antd";
-import { userActivityData } from "../../../../data";
+import { Card, Col, Divider, Row, Space, Typography } from "antd";
 import Table1 from "./Table1";
-const { Text } = Typography;
+import Table2 from "./Table2";
+const { Text, Title } = Typography;
 export default function DataCardRow3() {
   return (
     <Row gutter={24} style={{ marginTop: "20px" }}>
@@ -18,25 +18,29 @@ export default function DataCardRow3() {
       </Col>
       <Col span={12}>
         <Card
-          title="User Activity"
-          extra={<a href="#">View all</a>}
+          title={
+            <>
+              <div>Product Sales</div>
+              <Divider />
+              <div style={{ display: "flex", gap: "170px" }}>
+                <div>
+                  <Text type="secondary">Earning</Text> <br />
+                  <Title style={{ fontSize: "20px" }}>20,569$</Title>
+                </div>
+                <div>
+                  <Text type="secondary">Yesterday</Text> <br />
+                  <Title style={{ fontSize: "20px" }}>580$</Title>
+                </div>
+                <div>
+                  <Text type="secondary">This Week</Text> <br />
+                  <Title style={{ fontSize: "20px" }}>5,789$</Title>
+                </div>
+              </div>
+            </>
+          }
           style={{ width: 600 }}
         >
-          {userActivityData.map((item, index) => (
-            <Row align="middle" style={{ padding: "10px" }} key={index}>
-              <Col>
-                <Avatar src={item.src} size="large" />
-              </Col>
-              <Col style={{ paddingLeft: "10px" }}>
-                <Text strong>John Deo</Text>
-                <br />
-                <Text type="secondary">Lorem Ipsum is simply dummy text.</Text>
-              </Col>
-              <Col style={{ marginLeft: "auto" }}>
-                <Text type="secondary">{item.time}🕑</Text>
-              </Col>
-            </Row>
-          ))}
+          <Table2 />
         </Card>
       </Col>
     </Row>

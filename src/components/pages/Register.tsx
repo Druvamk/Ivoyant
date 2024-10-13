@@ -1,5 +1,5 @@
 import { Button, Form, Input, Progress, Typography } from "antd";
-import "./Register.css";
+import "./Register.scss";
 import { Link } from "react-router-dom";
 import SvgPhoto from "../SvgPhoto";
 import { ChangeEvent, useState } from "react";
@@ -58,6 +58,7 @@ export default function Register() {
         <div className="Register-form">
           <Form
             layout="vertical"
+            className="form-login"
             style={{
               width: "400px",
               height: "500px",

@@ -6,6 +6,7 @@ import Order from "../graphs/Order";
 import Sales from "../graphs/Sales";
 import MarketOverview from "../graphs/MarketOverview";
 import { GroupGraphContainer } from "../../cardsStyledComponents/Container.styled";
+import FourGraph from "./FourGraph";
 
 function GroupGraph() {
   return (
@@ -48,138 +49,7 @@ function GroupGraph() {
         </Layout>
       </div>
       <div>
-        <Row gutter={16}>
-          <Col span={6}>
-            <Card
-              style={{
-                width: 300,
-                height: 230,
-                paddingRight: "10px",
-              }}
-            >
-              <GroupGraphContainer>
-                <Statistic
-                  style={{ marginLeft: "40px" }}
-                  title="Total Users"
-                  value={78250}
-                  valueStyle={{ color: "#000", fontWeight: "bold" }}
-                  suffix={
-                    <Button
-                      style={{
-                        marginTop: "10px",
-                        border: "1px solid #006BFF",
-                        height: "30px",
-                        width: "70px",
-                      }}
-                      icon={<ArrowUpOutlined />}
-                    >
-                      59%
-                    </Button>
-                  }
-                />
-                <Users />
-              </GroupGraphContainer>
-            </Card>
-          </Col>
-          <Col span={6}>
-            <Card
-              style={{
-                width: 300,
-                height: 230,
-                paddingRight: "10px",
-              }}
-            >
-              <GroupGraphContainer>
-                <Statistic
-                  style={{ marginLeft: "40px" }}
-                  title="Total Order"
-                  value={18800}
-                  valueStyle={{ color: "#000", fontWeight: "bold" }}
-                  suffix={
-                    <Button
-                      style={{
-                        marginTop: "10px",
-                        border: "1px solid #F3C623",
-                        height: "30px",
-                        width: "70px",
-                      }}
-                      icon={<ArrowUpOutlined />}
-                    >
-                      59%
-                    </Button>
-                  }
-                />
-                <Order />
-              </GroupGraphContainer>
-            </Card>
-          </Col>
-          <Col span={6}>
-            <Card
-              style={{
-                width: 300,
-                height: 230,
-                paddingRight: "10px",
-              }}
-            >
-              <GroupGraphContainer>
-                <Statistic
-                  style={{ marginLeft: "40px" }}
-                  title="Total Sales"
-                  value={"$35,078"}
-                  valueStyle={{ color: "#000", fontWeight: "bold" }}
-                  suffix={
-                    <Button
-                      style={{
-                        marginTop: "10px",
-                        border: "1px solid #F3C623",
-                        height: "30px",
-                        width: "70px",
-                      }}
-                      icon={<ArrowUpOutlined />}
-                    >
-                      59%
-                    </Button>
-                  }
-                />
-                <Sales />
-              </GroupGraphContainer>
-            </Card>
-          </Col>
-          <Col span={6}>
-            <Card
-              style={{
-                width: 300,
-                height: 230,
-                paddingRight: "10px",
-              }}
-            >
-              <GroupGraphContainer>
-                <Statistic
-                  style={{ marginLeft: "40px" }}
-                  title="Total Marketing"
-                  value={"$1,12,083"}
-                  valueStyle={{ color: "#000", fontWeight: "bold" }}
-                  suffix={
-                    <Button
-                      style={{
-                        marginTop: "10px",
-                        border: "1px solid #3f8600",
-                        height: "30px",
-                        width: "70px",
-                      }}
-                      icon={<ArrowUpOutlined />}
-                    >
-                      59%
-                    </Button>
-                  }
-                />
-                <div style={{ height: "130px" }}>
-                  <MarketOverview />
-                </div>
-              </GroupGraphContainer>
-            </Card>
-          </Col>
-        </Row>
+        <FourGraph />
       </div>
       ;
     </>

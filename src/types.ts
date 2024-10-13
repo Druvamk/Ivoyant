@@ -1,4 +1,4 @@
-import { ReactComponentElement } from "react";
+import { Key, ReactComponentElement } from "react";
 
 export interface DataPointProps {
   month: string;
@@ -82,10 +82,16 @@ export type userActivityDataProps = {
   time: string;
   src: string;
 };
-export interface DataType {
-  key: React.Key;
-  // assigned: React.ComponentType;
-  name: string;
-  dueDate: string;
-  priority: string;
+// export interface DataType {
+//   key: React.Key;
+//   // assigned: React.ComponentType;
+//   name: string;
+//   dueDate: string;
+//   priority: string[];
+// }
+export interface DataType2 {
+  key: Key;
+  lastsales: string;
+  productname: string;
+  price: string;
 }
