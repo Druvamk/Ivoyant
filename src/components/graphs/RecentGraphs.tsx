@@ -1,7 +1,10 @@
 import React from "react";
-import { Table, Card, Statistic, Row, Col, Badge } from "antd";
-import { Line, LineConfig } from "@ant-design/charts";
-
+import { Table, Card, Statistic, Row, Col, Badge, Typography } from "antd";
+import { Line } from "@ant-design/charts";
+import { ArrowUpOutlined } from "@ant-design/icons";
+import { Recentconfig } from "../../data";
+import SingleGraph from "./SingleGraph";
+const { Title } = Typography;
 // Define the types for table data
 interface TableData {
   key: string;
@@ -131,22 +134,6 @@ const RecentGraphs: React.FC = () => {
     },
   ];
 
-  const config: LineConfig = {
-    data: [
-      { month: "Jun", value: 30 },
-      { month: "Jul", value: 70 },
-      { month: "Aug", value: 10 },
-      { month: "Sep", value: 80 },
-      { month: "Oct", value: 50 },
-      { month: "Nov", value: 60 },
-      { month: "Dec", value: 20 },
-    ],
-    xField: "month",
-    yField: "value",
-    smooth: true,
-    color: "#F3C623",
-  };
-
   return (
     <div>
       <h3>Recent Orders</h3>
@@ -160,18 +147,47 @@ const RecentGraphs: React.FC = () => {
         </Col>
         <Col span={8}>
           <Card>
-            <Statistic title="Company Finance Growth" value="+45.14%" />
-            <Statistic
-              title="Company Expenses Ratio"
-              value="0.58%"
-              style={{ marginTop: 16 }}
-            />
-            <Statistic
-              title="Business Risk Cases"
-              value="Low"
-              style={{ marginTop: 16 }}
-            />
-            <Line {...config} />
+            <Row justify="space-between" align="middle">
+              <Col span={12}>
+                <p>Company Finance Growth</p>
+              </Col>
+              <Col span={12}>
+                <Title
+                  level={4}
+                  style={{ marginLeft: "100px", marginBottom: "16px" }}
+                >
+                  +45.14%
+                </Title>
+              </Col>
+            </Row>
+            <Row justify="space-between" align="middle">
+              <Col span={12}>
+                <p>Company Finance ratio</p>
+              </Col>
+              <Col span={12}>
+                <Title
+                  level={4}
+                  style={{ marginLeft: "120px", marginBottom: "16px" }}
+                >
+                  0.58%
+                </Title>
+              </Col>
+            </Row>
+            <Row justify="space-between" align="middle">
+              <Col span={12}>
+                <p>Business Risk Cases</p>
+              </Col>
+              <Col span={12}>
+                <Title
+                  level={4}
+                  style={{ marginLeft: "120px", marginBottom: "16px" }}
+                >
+                  Low
+                </Title>
+              </Col>
+            </Row>
+
+            <SingleGraph />
           </Card>
         </Col>
       </Row>

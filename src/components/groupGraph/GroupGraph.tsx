@@ -1,11 +1,5 @@
-import { Button, Card, Col, Image, Layout, Row, Statistic } from "antd";
+import { Button, Card, Col, Image, Layout, Row } from "antd";
 import welcomebanner from "../../assests/welcome-banner-D4VmDBhG.png";
-import { ArrowUpOutlined } from "@ant-design/icons";
-import Users from "../graphs/Users";
-import Order from "../graphs/Order";
-import Sales from "../graphs/Sales";
-import MarketOverview from "../graphs/MarketOverview";
-import { GroupGraphContainer } from "../../cardsStyledComponents/Container.styled";
 import FourGraph from "./FourGraph";
 
 function GroupGraph() {

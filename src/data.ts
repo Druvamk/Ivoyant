@@ -10,6 +10,7 @@ import avatar2 from "../src/assests/avatar2.png";
 import avatar3 from "../src/assests/avatar3.png";
 import avatar4 from "../src/assests/avatar4.png";
 import { TableColumnsType } from "antd";
+import { LineConfig } from "@ant-design/charts";
 export const a1 = avatar1;
 export const a2 = avatar2;
 export const a3 = avatar3;
@@ -192,3 +193,18 @@ export const data1: DataType2[] = [
     price: "$ 743.23",
   },
 ];
+export const Recentconfig: LineConfig = {
+  data: [
+    { month: "Jun", value: 30 },
+    { month: "Jul", value: 70 },
+    { month: "Aug", value: 10 },
+    { month: "Sep", value: 80 },
+    { month: "Oct", value: 50 },
+    { month: "Nov", value: 60 },
+    { month: "Dec", value: 20 },
+  ],
+  xField: "month",
+  yField: "value",
+  smooth: true,
+  color: "#F3C623",
+};

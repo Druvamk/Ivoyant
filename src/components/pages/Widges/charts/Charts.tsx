@@ -1,9 +1,10 @@
-import { Breadcrumb } from "antd";
+import { Breadcrumb, Col, Row } from "antd";
 import Title from "antd/es/typography/Title";
 import FourGraph from "../../../groupGraph/FourGraph";
-import { IncomeContainer } from "../../../../cardsStyledComponents/Container.styled";
-import IncomeGropGraph from "../../../groupGraph/IncomeGropGraph";
 import UniqueGraph from "../../../groupGraph/UniqueGraph";
+import SingleGraph from "../../../graphs/SingleGraph";
+import SalesReport from "../../../graphs/SalesGroup";
+import IncomeGraph from "../../../groupGraph/IncomeGraph";
 
 export default function Charts() {
   return (
@@ -24,6 +25,16 @@ export default function Charts() {
       <Title>Chart</Title>
       <FourGraph />
       <UniqueGraph />
+      <Row gutter={16}>
+        <Col span={8}>
+          <SingleGraph />
+        </Col>
+        <Col span={16}>
+          <IncomeGraph />
+        </Col>
+      </Row>
+
+      <SalesReport />
     </div>
   );
 }

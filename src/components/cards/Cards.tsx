@@ -1,4 +1,4 @@
-import { Card, Row, Col, Statistic, Button } from "antd";
+import { Card, Row, Col, Statistic, Button, Tag } from "antd";
 import { RiseOutlined, FallOutlined } from "@ant-design/icons";
 export const buttonStyle = { marginTop: "10px", border: "1px solid #3f8600" };
 export const cardStyle = { height: "140px", width: "300px" };
@@ -13,9 +13,9 @@ export default function Cards() {
             value={442236}
             valueStyle={{ color: "#000" }}
             suffix={
-              <Button style={buttonStyle} icon={<RiseOutlined />}>
-                59%
-              </Button>
+              <Tag color="blue" icon={<RiseOutlined />}>
+                59.3%
+              </Tag>
             }
           />
           <p style={{ marginTop: "10px" }}>
@@ -31,16 +31,9 @@ export default function Cards() {
             value={78250}
             valueStyle={{ color: "#000" }}
             suffix={
-              <Button
-                style={{
-                  marginTop: "10px",
-                  border: "1px solid #3f8600",
-                  color: "#3f8600",
-                }}
-                icon={<RiseOutlined />}
-              >
-                59%
-              </Button>
+              <Tag color="blue" icon={<RiseOutlined />}>
+                70.5%
+              </Tag>
             }
           />
           <p style={{ marginTop: "10px" }}>You made an extra 8,900 this year</p>
@@ -53,9 +46,9 @@ export default function Cards() {
             value={18800}
             valueStyle={{ color: "#000" }}
             suffix={
-              <Button style={buttonStyle} icon={<FallOutlined />}>
-                59%
-              </Button>
+              <Tag color="yellow" icon={<FallOutlined />}>
+                27.4%
+              </Tag>
             }
           />
           <p style={{ marginTop: "10px" }}>You made an extra 1,943 this year</p>
@@ -69,9 +62,9 @@ export default function Cards() {
             prefix="$"
             valueStyle={{ color: "#000" }}
             suffix={
-              <Button style={buttonStyle} icon={<FallOutlined />}>
-                59%
-              </Button>
+              <Tag color="yellow" icon={<FallOutlined />}>
+                27.4%
+              </Tag>
             }
           />
           <p style={{ marginTop: "10px" }}>

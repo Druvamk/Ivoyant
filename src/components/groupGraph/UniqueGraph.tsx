@@ -38,7 +38,7 @@ const lineConfig = {
   color: ["#5B8FF9", "#5B8FF9"],
   smooth: true,
   height: 400,
-  areaStyle: { fill: "green" },
+  area: { color: ["#5B8FF9", "#5B8FF9"] },
 };
 const ColumnData = [
   { day: "Mon", value: 90 },
