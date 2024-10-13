@@ -261,8 +261,11 @@ const Sidebar: React.FC = () => {
           <Header
             style={{
               background: colorBgContainer,
+              padding: 0,
+              position: "sticky",
+              top: 0,
+              zIndex: 1,
             }}
-            className="p-0 sticky top-0 z-10"
           >
             <SvgPhoto />
           </Header>
@@ -277,28 +280,41 @@ const Sidebar: React.FC = () => {
         <Layout style={{ padding: "0" }}>
           <Header
             style={{
+              padding: 0,
+              background: "#fff",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              position: "sticky",
+              zIndex: 1,
+              top: 0,
               backgroundColor: colorBgContainer, // Ensure it stays at the top of the viewport
             }}
-            className="p-0 bg-white flex justify-between items-center sticky top-0 z-10"
           >
             {/* Collapse Button */}
             <Button
               type="text"
               icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
               onClick={() => setCollapsed(!collapsed)}
-              className="mt-1"
+              style={{ marginLeft: "16px" }}
             />
             <Input
               placeholder="Ctrl + K"
               prefix={<SearchOutlined />}
-              className="w-[200px] p-[4px_8px] text-[14px] ml-[16px] "
+              style={{
+                width: 200,
+                borderRadius: 4,
+                padding: "4px 8px",
+                fontSize: "14px",
+                marginLeft: "16px",
+              }}
             />
 
             {/* Navigation Menu */}
             <Menu
               theme="light"
               mode="horizontal"
-              className="flex-1 justify-end "
+              style={{ flex: 1, justifyContent: "flex-end" }}
               items={[
                 {
                   key: "1",
@@ -337,9 +353,11 @@ const Sidebar: React.FC = () => {
           <Layout>
             <Content
               style={{
+                padding: 24,
+                margin: 0,
+                minHeight: 280,
                 background: colorBgContainer,
               }}
-              className="p-[24px] m-0 min-h-10"
             >
               <Outlet />
             </Content>

@@ -10,30 +10,30 @@ function GroupGraph() {
         <Layout>
           <Card
             bordered={false}
-            className="bg-gradient-to-r from-[#0052D4] via-[#4364F7] to-[#6FB1FC] rounded-[10px] p-[20px] text-white h-[250px]"
+            style={{
+              width: "100%",
+              height: "300px",
+              background:
+                "linear-gradient(90deg, #0052D4 0%, #4364F7 50%, #6FB1FC 100%)",
+              color: "white",
+            }}
           >
             <Row>
               <Col span={16}>
                 <Title style={{ color: "white" }}>Welcome to Mantis</Title>
-                <p
-                  style={{
-                    color: "white",
-                    fontWeight: "10px",
-                    marginBottom: "10px",
-                  }}
-                >
+                <p style={{ color: "white", fontWeight: "10px" }}>
                   The purpose of a product update is to add new features, fix
-                  bugs or <br></br> improve the performance of the product.
+                  bugs or improve the performance of the product.
                 </p>
                 <Button type="primary" ghost>
                   View Full Statistic
                 </Button>
               </Col>
-              <Col span={8} className="text-right">
+              <Col span={8} style={{ textAlign: "right" }}>
                 <Image
                   src={welcomebanner}
                   alt="banner illustration"
-                  className="w-[250px] h-auto"
+                  style={{ width: "250px", height: "auto" }}
                 />
               </Col>
             </Row>
