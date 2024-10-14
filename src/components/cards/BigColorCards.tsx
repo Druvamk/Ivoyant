@@ -9,10 +9,11 @@ import {
   Container,
   ParaGraph,
 } from "../../cardsStyledComponents/Container.styled";
+import { marginTop } from "../../data";
 const { Title } = Typography;
 export default function BigColorCards() {
   return (
-    <Row gutter={20} style={{ marginTop: "16px" }}>
+    <Row gutter={20} style={marginTop}>
       <Col span={8}>
         <Card
           style={{

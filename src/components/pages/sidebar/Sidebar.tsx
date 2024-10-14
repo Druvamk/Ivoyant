@@ -5,6 +5,8 @@ import {
   CalendarOutlined,
   CommentOutlined,
   DashboardOutlined,
+  FormOutlined,
+  ForwardOutlined,
   MailOutlined,
   MenuFoldOutlined,
   MenuUnfoldOutlined,
@@ -129,8 +131,8 @@ const Sidebar: React.FC = () => {
       label: collapsed ? "" : "Forms & Tables",
       type: "group",
       children: [
-        { key: "g4-1", label: "Form Validation" },
-        { key: "g4-2", label: "Form Wizard" },
+        { key: "g4-1", label: "Form Validation", icon: <ForwardOutlined /> },
+        { key: "g4-2", label: "Form Wizard", icon: <WindowsOutlined /> },
         {
           key: "g4-3",
           label: "Layout",
