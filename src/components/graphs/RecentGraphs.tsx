@@ -1,8 +1,5 @@
 import React from "react";
 import { Table, Card, Statistic, Row, Col, Badge, Typography } from "antd";
-import { Line } from "@ant-design/charts";
-import { ArrowUpOutlined } from "@ant-design/icons";
-import { Recentconfig } from "../../data";
 import SingleGraph from "./SingleGraph";
 const { Title } = Typography;
 // Define the types for table data
