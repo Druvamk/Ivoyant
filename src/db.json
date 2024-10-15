@@ -1,0 +1,24 @@
+{
+  "todos": [
+    {
+      "id": "2d8d",
+      "text": "Laern redux",
+      "completed": false
+    },
+    {
+      "id": "c60c",
+      "text": "Learn Next js",
+      "completed": false
+    },
+    {
+      "id": "a299",
+      "text": "Learn mango DB",
+      "completed": false
+    },
+    {
+      "id": "b350",
+      "text": "Learn Long ago",
+      "completed": false
+    }
+  ]
+}
