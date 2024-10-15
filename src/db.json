@@ -1,0 +1,29 @@
+{
+  "todo": [
+    {
+      "id": 1,
+      "text": "Learn React",
+      "isCompleted": true
+    },
+    {
+      "id": 2,
+      "text": "Learn Redux",
+      "isCompleted": false
+    },
+    {
+      "id": 3,
+      "text": "Learn TypeScript",
+      "isCompleted": false
+    },
+    {
+      "id": 4,
+      "text": "Learn Vite",
+      "isCompleted": false
+    },
+    {
+      "id": 5,
+      "text": "Learn ESLint",
+      "isCompleted": false
+    }
+  ]
+}
