@@ -1,48 +1,45 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-interface Todo {
-  id: string;
-  text: string;
-}
+
 export const apiSlice = createApi({
   reducerPath: "api",
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3008/" }),
-  tagTypes: ["Todos"],
+  baseQuery: fetchBaseQuery({
+    baseUrl: "http://localhost:3008/",
+  }),
+  tagTypes: ["Post"],
   endpoints: (builder) => ({
-    getTodos: builder.query<Todo[], void>({
-      query: () => "todos",
-      transformResponse: (res: Todo[]) =>
-        res.sort((a, b) => Number(a.id) - Number(b.id)),
-      providesTags: ["Todos"],
+    getPosts: builder.query({
+      query: () => "posts",
+      providesTags: ["Post"],
     }),
-    postTodos: builder.mutation({
-      query: (todo) => ({
-        url: "todos",
+    createPost: builder.mutation({
+      query: (newPost) => ({
+        url: "posts",
         method: "POST",
-        body: todo,
+        body: newPost,
       }),
-      invalidatesTags: ["Todos"],
+      invalidatesTags: ["Post"],
     }),
-    patchTodos: builder.mutation({
-      query: (todo) => ({
-        url: `todos/${todo.id}`,
-        method: "PATCH",
-        body: todo,
+    updatePost: builder.mutation({
+      query: ({ id, ...rest }) => ({
+        url: `posts/${id}`,
+        method: "PUT",
+        body: rest,
       }),
-      invalidatesTags: ["Todos"],
+      invalidatesTags: ["Post"],
     }),
-    deleteTodos: builder.mutation({
-      query: ({ id }) => ({
-        url: `todos/${id}`,
+    deletePost: builder.mutation({
+      query: (id) => ({
+        url: `posts/${id}`,
         method: "DELETE",
-        body: id,
       }),
-      invalidatesTags: ["Todos"],
+      invalidatesTags: ["Post"],
     }),
   }),
 });
+
 export const {
-  useGetTodosQuery,
-  useDeleteTodosMutation,
-  usePatchTodosMutation,
-  usePostTodosMutation,
+  useGetPostsQuery,
+  useCreatePostMutation,
+  useUpdatePostMutation,
+  useDeletePostMutation,
 } = apiSlice;
