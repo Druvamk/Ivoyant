@@ -1,10 +1,14 @@
+type questionsProps = {
+  question: string;
+  options: string[];
+  correctOption: number;
+  points: number;
+};
+
 export interface intialStateProps {
-  count: number;
-  step: number;
+  questions: questionsProps[];
+  status: "loading" | "ready" | "error";
 }
-export type ActionType =
-  | { type: "increment" }
-  | { type: "decrement" }
-  | { type: "setCount"; payload: number } // This defines the setCount action
-  | { type: "setStep"; payload: number }
-  | { type: "reset" };
+export type ActionsProps =
+  | { type: "dataReceived"; payload: intialStateProps }
+  | { type: "dataFailed" };
