@@ -1,4 +1,4 @@
-type questionsProps = {
+export type questionsProps = {
   question: string;
   options: string[];
   correctOption: number;
@@ -7,8 +7,30 @@ type questionsProps = {
 
 export interface intialStateProps {
   questions: questionsProps[];
-  status: "loading" | "ready" | "error";
+  status: string;
+  index: number;
+  answer: number | null;
+  points: number;
+  highScore: number;
 }
 export type ActionsProps =
   | { type: "dataReceived"; payload: intialStateProps }
-  | { type: "dataFailed" };
+  | { type: "dataFailed" }
+  | { type: "start" }
+  | { type: "newAnswer"; payload: number }
+  | { type: "nextQuestion"; payload?: number }
+  | { type: "finished"; payload?: string }
+  | { type: "restart" };
+export type singleQuestionProps = {
+  question: string;
+  options: number[];
+  correctOption: number;
+  points: number;
+  id: string;
+};
+
+export type questionsPropsFetching = {
+  question: singleQuestionProps;
+  dispatch: (action: ActionsProps) => void;
+  answer?: number;
+};

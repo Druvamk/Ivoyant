@@ -1,8 +1,5 @@
-export default function Main() {
-  return (
-    <main className="main">
-      <p>1/15</p>
-      <p>Questions</p>
-    </main>
-  );
+import { ReactNode } from "react";
+
+export default function Main({ children }: { children: ReactNode }) {
+  return <main className="main">{children}</main>;
 }
