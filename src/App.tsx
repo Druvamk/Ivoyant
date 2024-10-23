@@ -2,7 +2,7 @@ import { useEffect, useReducer } from "react";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import "./components/index.css";
-import { ActionsProps, intialStateProps } from "./type";
+import { ActionsProps, intialStateProps, questionsProps } from "./type";
 import Loader from "./components/Loader";
 import Error from "./components/Error";
 import StartScreen from "./components/startScreen/StartScreen";
@@ -28,7 +28,8 @@ function reducer(state: any, action: ActionsProps) {
     case "start":
       return { ...state, status: "active" };
     case "newAnswer":
-      const quest = state.questions.at(state.index);
+      const quest: questionsProps = state.questions.at(state.index);
+      console.log(quest);
       return {
         ...state,
         answer: action.payload,
@@ -48,14 +49,7 @@ function reducer(state: any, action: ActionsProps) {
       };
     case "restart":
       return { ...intialState, questions: state.questions, status: "ready" };
-    // return {
-    //   ...state,
-    //   points: 0,
-    //   highScore: 0,
-    //   index: 0,
-    //   answer: null,
-    //   status: "ready",
-    // };
+
     default:
       return state;
   }
@@ -64,20 +58,16 @@ export default function App() {
   const [state, disptach] = useReducer(reducer, intialState);
   const { questions, status, index, answer, points, highScore } = state;
   const lengthOfQuestions = questions.length;
-  console.log(questions);
+  console.log(state);
   const maxPossible = questions.reduce(
-    (prev: any, cur: any) => prev + cur.points,
+    (prev: number, cur: questionsProps) => prev + cur.points,
     0
   );
   useEffect(() => {
     async function fetchData() {
-      try {
-        const data = await fetch("http://localhost:3008/questions");
-        const res = await data.json();
-        disptach({ type: "dataReceived", payload: res });
-      } catch (error) {
-        disptach({ type: "dataFailed" });
-      }
+      const data = await fetch("http://localhost:3008/questions");
+      const res = await data.json();
+      disptach({ type: "dataReceived", payload: res });
     }
     fetchData();
   }, []);

@@ -6,7 +6,6 @@ export default function Questions({
   answer,
   dispatch,
 }: questionsPropsFetching) {
-  console.log(question);
   return (
     <div>
       <h4>{question.question}</h4>
