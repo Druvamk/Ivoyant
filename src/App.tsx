@@ -1,55 +1,26 @@
-import { FormEvent, useState } from "react";
-import {
-  useDeleteTodosMutation,
-  useGetTodosQuery,
-  usePatchTodosMutation,
-  usePostTodosMutation,
-} from "./apiSlice";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-export default function App() {
-  const [postdata] = usePostTodosMutation();
-  const [patchTodos] = usePatchTodosMutation();
-  const [deleteTodos] = useDeleteTodosMutation();
-  const [dataTodo, setDataTodo] = useState<string>("");
-  const { data, isLoading } = useGetTodosQuery();
-  if (isLoading) return <div>Loading...</div>;
-  function handleSubmit(e: FormEvent) {
-    e.preventDefault();
-    if (!dataTodo) return;
-    console.log(dataTodo);
-    postdata({ text: dataTodo, completed: false });
-    setDataTodo("");
-  }
+import "./App.css";
+import Home from "./pages/Home";
+import AddEditUser from "./pages/AddEditUser";
+import UserInfo from "./pages/UserInfo";
 
+function App() {
   return (
-    <>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <input
-            type="text"
-            value={dataTodo}
-            onChange={(e) => setDataTodo(e.target.value)}
-          />
-        </div>
-        <div>
-          <button>Submit</button>
-        </div>
-      </form>
-      {data?.map((todo: any) => (
-        <div key={todo.id}>
-          <input
-            type="checkbox"
-            checked={todo.completed}
-            onChange={() => patchTodos({ ...todo, completed: !todo.completed })}
-          />
-          <label
-            style={{ textDecoration: todo.completed ? "line-through" : "" }}
-          >
-            {todo.text}
-            <button onClick={() => deleteTodos({ id: todo.id })}>Delete</button>
-          </label>
-        </div>
-      ))}
-    </>
+    <BrowserRouter>
+      <div className="App">
+        <ToastContainer />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/add" element={<AddEditUser />} />
+          <Route path="/update/:id" element={<AddEditUser />} />
+          <Route path="/view/:id" element={<UserInfo />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
+
+export default App;
