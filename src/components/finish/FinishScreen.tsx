@@ -13,17 +13,11 @@ export default function FinishScreen({
 }) {
   let emoji;
 
-  const percentage = (points / maxpossiblepoints) * 100;
-  if (percentage === 100) emoji = "🧁";
-  if (percentage >= 80 && percentage < 100) emoji = "🥯";
-  if (percentage >= 50 && percentage < 80) emoji = "🥳";
-  if (percentage >= 0 && percentage < 50) emoji = "🫡";
-  if (percentage === 0) emoji = "🙃No......";
   return (
     <>
       <p className="result">
         <span>{emoji}</span> you scored <strong>{points} </strong>out of
-        {maxpossiblepoints}({Math.ceil(percentage)}%)
+        {maxpossiblepoints}
       </p>
       <p className="highscore">(Highscore: {highScore} points)</p>
       <button
