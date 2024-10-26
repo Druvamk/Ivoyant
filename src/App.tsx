@@ -1,55 +1,64 @@
-import { FormEvent, useState } from "react";
-import {
-  useDeleteTodosMutation,
-  useGetTodosQuery,
-  usePatchTodosMutation,
-  usePostTodosMutation,
-} from "./apiSlice";
+import { useState } from "react";
 
 export default function App() {
-  const [postdata] = usePostTodosMutation();
-  const [patchTodos] = usePatchTodosMutation();
-  const [deleteTodos] = useDeleteTodosMutation();
-  const [dataTodo, setDataTodo] = useState<string>("");
-  const { data, isLoading } = useGetTodosQuery();
-  if (isLoading) return <div>Loading...</div>;
-  function handleSubmit(e: FormEvent) {
-    e.preventDefault();
-    if (!dataTodo) return;
-    console.log(dataTodo);
-    postdata({ text: dataTodo, completed: false });
-    setDataTodo("");
-  }
-
   return (
-    <>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <input
-            type="text"
-            value={dataTodo}
-            onChange={(e) => setDataTodo(e.target.value)}
-          />
-        </div>
-        <div>
-          <button>Submit</button>
-        </div>
-      </form>
-      {data?.map((todo: any) => (
-        <div key={todo.id}>
-          <input
-            type="checkbox"
-            checked={todo.completed}
-            onChange={() => patchTodos({ ...todo, completed: !todo.completed })}
-          />
-          <label
-            style={{ textDecoration: todo.completed ? "line-through" : "" }}
-          >
-            {todo.text}
-            <button onClick={() => deleteTodos({ id: todo.id })}>Delete</button>
-          </label>
+    <div className="App">
+      <FlashCards />
+    </div>
+  );
+}
+
+const questions = [
+  {
+    id: 3457,
+    question: "What language is React based on?",
+    answer: "JavaScript",
+  },
+  {
+    id: 7336,
+    question: "What are the building blocks of React apps?",
+    answer: "Components",
+  },
+  {
+    id: 8832,
+    question: "What's the name of the syntax we use to describe a UI in React?",
+    answer: "JSX",
+  },
+  {
+    id: 1297,
+    question: "How to pass data from parent to child components?",
+    answer: "Props",
+  },
+  {
+    id: 9103,
+    question: "How to give components memory?",
+    answer: "useState hook",
+  },
+  {
+    id: 2002,
+    question:
+      "What do we call an input element that is completely synchronised with state?",
+    answer: "Controlled element",
+  },
+];
+
+function FlashCards() {
+  const [show, setShow] = useState(0);
+  function handleClick(id: number) {
+    console.log(id !== show ? id : null);
+    setShow(id);
+  }
+  return (
+    <div>
+      {questions.map((item, i) => (
+        <div
+          key={i}
+          onClick={() => handleClick(item.id)}
+          style={{ cursor: "pointer" }}
+        >
+          {item.id === show ? item.answer : item.question}
         </div>
       ))}
-    </>
+    </div>
   );
 }
