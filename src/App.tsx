@@ -1,3 +1,9 @@
+import Progress from "./Progress";
+
 export default function App() {
-  return <div></div>;
+  return (
+    <div>
+      <Progress />
+    </div>
+  );
 }
