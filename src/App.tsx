@@ -22,7 +22,12 @@ export default function App() {
   return (
     <div>
       {isPending && <p>Loading...</p>}
-      <input type="text" value={textInput} onChange={handleChange} />
+      <input
+        type="text"
+        value={textInput}
+        onChange={handleChange}
+        placeholder="enter the text"
+      />
       {data.map((item, i) => (
         <div key={i}>{item}</div>
       ))}
