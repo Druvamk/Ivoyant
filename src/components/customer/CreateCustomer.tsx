@@ -23,6 +23,7 @@ function Customer() {
           <input
             value={fullName}
             onChange={(e) => setFullName(e.target.value)}
+            placeholder="Enter your name"
           />
         </div>
         <div>
@@ -30,6 +31,7 @@ function Customer() {
           <input
             value={nationalId}
             onChange={(e) => setNationalId(e.target.value)}
+            placeholder="enter your Id"
           />
         </div>
         <button onClick={handleClick}>Create new customer</button>

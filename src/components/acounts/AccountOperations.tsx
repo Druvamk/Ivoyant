@@ -43,12 +43,14 @@ function AccountOperations() {
             type="number"
             value={depositAmount}
             onChange={(e) => setDepositAmount(Number(e.target.value))}
+            placeholder="Enter ammount"
           />
           <select
             value={currency}
             onChange={(e) =>
               setCurrency(e.target.value as "USD" | "EUR" | "GBP")
             }
+            title="currency"
           >
             <option value="USD">US Dollar</option>
             <option value="EUR">Euro</option>
@@ -63,6 +65,7 @@ function AccountOperations() {
             type="number"
             value={withdrawalAmount}
             onChange={(e) => setWithdrawalAmount(Number(e.target.value))}
+            placeholder="Enter ammount"
           />
           <button onClick={handleWithdrawal}>
             Withdraw {withdrawalAmount}
