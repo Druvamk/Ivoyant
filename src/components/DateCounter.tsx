@@ -49,13 +49,19 @@ function DateCounter() {
           max="10"
           value={state.step}
           onChange={defineStep}
+          placeholder="Enter your name"
         />
         <span>{state.step}</span>
       </div>
 
       <div>
         <button onClick={() => dispatch({ type: "decrement" })}>-</button>
-        <input type="number" value={state.count} onChange={defineCount} />
+        <input
+          type="number"
+          value={state.count}
+          onChange={defineCount}
+          placeholder="Enter your name"
+        />
         <button onClick={() => dispatch({ type: "increment" })}>+</button>
       </div>
 
