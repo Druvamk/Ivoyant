@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useReducer } from "react";
 import Header from "./components/Header";
 import Main from "./components/Main";
@@ -27,8 +28,8 @@ function reducer(state: any, action: ActionsProps) {
       return { ...state, status: "error" };
     case "start":
       return { ...state, status: "active" };
-    case "newAnswer":
-      const quest: questionsProps = state.questions.at(state.index);
+    case "newAnswer": {
+      const quest: questionsProps = state.questions[state.index];
       console.log(quest);
       return {
         ...state,
@@ -38,6 +39,7 @@ function reducer(state: any, action: ActionsProps) {
             ? state.points + quest.points
             : state.points,
       };
+    }
     case "nextQuestion":
       return { ...state, index: state.index + 1, answer: null };
     case "finished":
