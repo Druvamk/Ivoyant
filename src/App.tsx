@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Todoprovider } from "./context/TodoContext";
 import { Todo } from "./types";
-import { TodoForm, TodoItem } from "./context";
+import TodoForm from "./context/TodoForm";
+import TodoItem from "./context/TodoItem";
 
 export default function App() {
   const [todo, setTodo] = useState<Todo[]>([]);
