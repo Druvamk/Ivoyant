@@ -29,6 +29,7 @@ export default function TodoItem({ todo }: { todo: Todo }) {
         className="cursor-pointer accent-green-500"
         checked={todo.completed}
         onChange={toggleCompleted}
+        placeholder="Enter the edit text"
       />
       <input
         type="text"
@@ -40,8 +41,10 @@ export default function TodoItem({ todo }: { todo: Todo }) {
         value={todoMsg}
         readOnly={!todoEditable}
         onChange={(e) => setTodoMsg(e.target.value)}
+        placeholder="Enter the edit text"
       />
       <button
+        type="button"
         className="w-8 h-8 rounded-lg text-xs flex items-center justify-center bg-gray-200 hover:bg-gray-300 disabled:opacity-50 transition-colors duration-150"
         onClick={() => {
           if (todo.completed) return;
