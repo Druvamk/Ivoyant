@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useState, useEffect } from "react";
 
 interface Todo {
   id: number;
@@ -8,8 +8,21 @@ interface Todo {
 }
 
 export default function App() {
-  const [text, setText] = useState<string>("");
-  const [todos, setTodos] = useState<Array<Todo>>([]);
+  const [text, setText] = useState<string>(
+    () => sessionStorage.getItem("text") || ""
+  );
+  const [todos, setTodos] = useState<Array<Todo>>(() => {
+    const savedTodos = localStorage.getItem("todos");
+    return savedTodos ? JSON.parse(savedTodos) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
+
+  useEffect(() => {
+    sessionStorage.setItem("text", text);
+  }, [text]);
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
@@ -19,6 +32,7 @@ export default function App() {
         { id: Date.now(), text, complete: false, isEditing: false },
       ]);
       setText("");
+      sessionStorage.removeItem("text");
     }
   }
 
@@ -57,56 +71,80 @@ export default function App() {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          placeholder="Enter the text..."
-        />
-        <button type="submit">Add</button>
-      </form>
-      <div>
-        {todos.map((item) => (
-          <div key={item.id}>
-            <input
-              type="checkbox"
-              checked={item.complete}
-              onChange={() => handleCheckBox(item.id)}
-              title="Mark as complete"
-            />
-            {item.isEditing ? (
-              <>
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
+        <form onSubmit={handleSubmit} className="flex mb-4">
+          <input
+            type="text"
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+            placeholder="Enter a new task..."
+            className="flex-1 p-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+          />
+          <button
+            type="submit"
+            className="bg-blue-500 text-white px-4 py-2 rounded-r-lg hover:bg-blue-600 transition-colors"
+          >
+            Add
+          </button>
+        </form>
+        <div>
+          {todos.map((item) => (
+            <div
+              key={item.id}
+              className="flex items-center justify-between p-2 mb-2 bg-gray-100 rounded-lg"
+            >
+              <input
+                type="checkbox"
+                checked={item.complete}
+                onChange={() => handleCheckBox(item.id)}
+                className="form-checkbox h-5 w-5 text-blue-500"
+                title="Mark as complete"
+              />
+              {item.isEditing ? (
                 <input
                   type="text"
                   value={item.text}
-                  title="Mark as complete"
                   onChange={(e) => handleEditChange(item.id, e.target.value)}
+                  placeholder="enter the text//"
+                  className="flex-1 ml-2 p-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
                 />
-                <button type="button" onClick={() => handleEditSubmit(item.id)}>
-                  Save
-                </button>
-              </>
-            ) : (
-              <>
+              ) : (
                 <span
-                  style={{
-                    textDecoration: item.complete ? "line-through" : "none",
-                  }}
+                  className={`flex-1 ml-2 ${
+                    item.complete ? "line-through text-gray-400" : ""
+                  }`}
                 >
                   {item.text}
                 </span>
-                <button type="button" onClick={() => handleEdit(item.id)}>
+              )}
+              {item.isEditing ? (
+                <button
+                  type="button"
+                  onClick={() => handleEditSubmit(item.id)}
+                  className="bg-green-500 text-white px-2 py-1 rounded-lg ml-2 hover:bg-green-600 transition-colors"
+                >
+                  Save
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => handleEdit(item.id)}
+                  className="text-blue-500 px-2 py-1 rounded-lg hover:text-blue-600 transition-colors"
+                >
                   ✏️
                 </button>
-              </>
-            )}
-            <button type="button" onClick={() => handleDelete(item.id)}>
-              ❌
-            </button>
-          </div>
-        ))}
+              )}
+              <button
+                type="button"
+                onClick={() => handleDelete(item.id)}
+                className="text-red-500 px-2 py-1 rounded-lg hover:text-red-600 transition-colors"
+              >
+                ❌
+              </button>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
